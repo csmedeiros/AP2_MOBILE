@@ -31,21 +31,24 @@ class MainActivity : AppCompatActivity() {
         val resultado = findViewById<TextView>(R.id.tvResultado)
 
         fun jogada(n:Int) {
-            val m = Random.nextInt(1, 3)
-            if(m==1) {
-                iPedra.visibility = VISIBLE
-                iPapel.visibility = View.INVISIBLE
-                iTesoura.visibility = View.INVISIBLE
-            }
-            else if(m==2) {
-                iPapel.visibility = VISIBLE
-                iPedra.visibility = View.INVISIBLE
-                iTesoura.visibility = View.INVISIBLE
-            }
-            else if(m==3) {
-                iTesoura.visibility = VISIBLE
-                iPapel.visibility = View.INVISIBLE
-                iPedra.visibility = View.INVISIBLE
+            val m = Random.nextInt(1, 4)
+            Log.d("MainActivity", m.toString())
+            when (m) {
+                1 -> {
+                    iPedra.visibility = VISIBLE
+                    iPapel.visibility = View.INVISIBLE
+                    iTesoura.visibility = View.INVISIBLE
+                }
+                2 -> {
+                    iPapel.visibility = VISIBLE
+                    iPedra.visibility = View.INVISIBLE
+                    iTesoura.visibility = View.INVISIBLE
+                }
+                3 -> {
+                    iTesoura.visibility = VISIBLE
+                    iPapel.visibility = View.INVISIBLE
+                    iPedra.visibility = View.INVISIBLE
+                }
             }
             if(m==n) {
                 resultado.setTextColor(Color.GRAY)
