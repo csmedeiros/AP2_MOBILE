@@ -9,13 +9,25 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pesquisa de lazer"
+            android:text="Teste de identificação:\n Carreiras em Tecnologia"
             android:textSize="25dp"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.127"
-            app:layout_constraintHorizontal_bias="0.504"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.236"
+    />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Certifique-se que o campo Nome\ne Idade estão preenchidos"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.701"
+            android:id="@+id/tvErroNomeIdade"/>
     <Button
             android:text="Iniciar pesquisa"
             android:layout_width="wrap_content"
@@ -27,19 +39,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Idade"
+            android:text="Insira aqui sua idade"
             android:textAlignment="center"
             android:ems="10"
             android:id="@+id/etIdade"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.571"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintVertical_bias="0.61"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Nome"
+            android:text="Insira aqui sua matrícula"
+            android:textAlignment="center"
+            android:ems="10"
+            android:id="@+id/etMatricula"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.518"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Insira aqui seu nome"
             android:textAlignment="center"
             android:ems="10"
             android:id="@+id/etNome"
@@ -47,5 +71,11 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintVertical_bias="0.428"/>
+    <ImageView
+            android:layout_width="211dp"
+            android:layout_height="137dp" app:srcCompat="@drawable/ibmec_casa_logo" android:id="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.005"/>
 
 </android.support.constraint.ConstraintLayout>
