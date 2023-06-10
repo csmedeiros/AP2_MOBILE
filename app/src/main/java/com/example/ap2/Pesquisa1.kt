@@ -1,8 +1,14 @@
 package com.example.ap2
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.provider.MediaStore.Audio.Radio
 import android.support.v7.app.AppCompatActivity
-import android.widget.TextView
+import android.util.Log
+import android.view.View
+import android.widget.*
 
 class Pesquisa1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,15 +20,40 @@ class Pesquisa1 : AppCompatActivity() {
         fun recuperaDados():List<String> {
                 val nome = extras?.getString("nome")
                 val idade = extras?.getInt("idade")
+                val matricula = extras?.getInt("matricula")
                 // Faça o que deseja com os dados recuperados
                 // por exemplo, exiba-os em uma TextView ou realize alguma lógica com eles
-                val dados: List<String> = listOf(nome.toString(), idade.toString())
+                val dados: List<String> = listOf(nome.toString(), idade.toString(), matricula.toString())
                 return dados
         }
 
-        val recepcaoStr = "Olá " + recuperaDados()[0] + ", seja bem vindo!\n Vamos começar seu teste..."
+        val recepcaoStr = "Olá " + recuperaDados()[0] + ", seja bem vindo!\n Primeiramente selecione seu curso"
         val recepcao = findViewById<TextView>(R.id.tvRecepcao)
-
+        val cdia = findViewById<RadioButton>(R.id.cbCDIA)
+        val engcomp = findViewById<RadioButton>(R.id.cbENGCOMP)
+        val ads = findViewById<RadioButton>(R.id.cbADS)
+        val groupCursos = findViewById<RadioGroup>(R.id.rgCursos)
+        val prox = findViewById<Button>(R.id.btnProx)
+        val erro = findViewById<TextView>(R.id.tvErroRadioButton)
+        erro.setTextColor(Color.RED)
+        erro.visibility = View.INVISIBLE
+        val bundle = Bundle()
+        
+        groupCursos.setOnCheckedChangeListener { group, checkedId ->
+                    if(ads.isChecked || engcomp.isChecked || cdia.isChecked) {
+                        bundle.putString("curso", "ADS")
+                        Log.d("Pesquisa1", checkedId.toString())
+                        erro.visibility = View.INVISIBLE
+                        prox.setOnClickListener {
+                            val intent = Intent(this@Pesquisa1, Pesquisa2::class.java)
+                            intent.putExtras(bundle)
+                            startActivity(intent)
+                        }
+                    }
+                    else {
+                        erro.visibility = View.VISIBLE
+                        }
+                }
         recepcao.setText(recepcaoStr)
     }
 }

@@ -1,56 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+            android:text=""
+            android:textSize="14dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.243"
+            app:layout_constraintHorizontal_bias="0.498"/>
 
-    <CheckBox
-            android:text="Jogos de cartas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/checkBox4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.019"
-            app:layout_constraintVertical_bias="0.689"/>
     <TextView
             android:text=""
             android:textSize="28dp"
+            android:textAlignment="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView8"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRecepcao"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063"
+            app:layout_constraintHorizontal_bias="0.498"/>
+
+    <RadioGroup
+            android:layout_width="296dp"
+            android:layout_height="185dp"
+            android:id="@+id/rgCursos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintVertical_bias="0.633">
+
+        <RadioButton
+                android:text="Ciência de Dados e I.A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cbCDIA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintVertical_bias="0.6"/>
+
+        <RadioButton
+                android:text="Análise e Desenvolvimento de Sistemas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cbADS"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.693"/>
+        <RadioButton
+                android:text="Engenharia da Computação"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/cbENGCOMP"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+    </RadioGroup>
+    <Button
+            android:text="Próximo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnProx"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.252" app:layout_constraintHorizontal_bias="0.52"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.805"/>
     <TextView
-            android:text=""
-            android:textSize="28dp"
+            android:text="Selecione seu curso antes de passar\n para a próxima etapa"
+            android:textAlignment="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/tvRecepcao"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.064" app:layout_constraintHorizontal_bias="0.52"/>
-    <CheckBox
-            android:text="Esportes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/checkBox"
+            android:layout_height="wrap_content" android:id="@+id/tvErroRadioButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.034"
-            app:layout_constraintVertical_bias="0.525"/>
-    <CheckBox
-            android:text="Jogos de tabuleiro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/checkBox5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.756"/>
-    <CheckBox
-            android:text="Artes Marciais"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/checkBox2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.019"
-            app:layout_constraintVertical_bias="0.609"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.914"/>
+
+
 </android.support.constraint.ConstraintLayout>

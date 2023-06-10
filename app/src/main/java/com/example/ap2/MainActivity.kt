@@ -10,9 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    private var isIdadeFirstClick = true
-    private var isNomeFirstClick = true
-    private var isMatriculaFirstClick = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,36 +29,39 @@ class MainActivity : AppCompatActivity() {
         erro.setTextColor(Color.RED)
 
         nome.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
+            if (hasFocus && nome.text.contentEquals("Insira aqui seu nome")) {
                 nome.text.clear()
-            } else if (!hasFocus && nome.text.isEmpty()) {
-                nome.setText("Nome")
+            } else if (hasFocus.not() && nome.text.contentEquals("")) {
+                nome.setText("Insira aqui seu nome")
             }
         }
 
         idade.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus and isIdadeFirstClick) {
+            if (hasFocus && idade.text.contentEquals("Insira aqui sua idade")) {
                 idade.text.clear()
-            } else if (!hasFocus && idade.text.isEmpty()) {
-                idade.setText("Idade")
+            } else if (hasFocus.not() && idade.text.contentEquals("")) {
+                idade.setText("Insira aqui sua idade")
             }
         }
         matricula.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus and isMatriculaFirstClick) {
+            if (hasFocus && matricula.text.contentEquals("Insira aqui sua matrícula")) {
                 matricula.text.clear()
-            } else if (!hasFocus && matricula.text.isEmpty()) {
-                matricula.setText("Matrícula")
+            } else if (hasFocus.not() && matricula.text.contentEquals("")) {
+                matricula.setText("Insira aqui sua matrícula")
             }
         }
 
+
+
         pesquisa.setOnClickListener {
-                if (nome.text.isNotEmpty() && !nome.text.contentEquals("Insira aqui seu nome") and idade.text.isNotEmpty()
-                    and !idade.text.contentEquals("Insira aqui sua idade") and matricula.text.isNotEmpty()   and !matricula.text.contentEquals("Insira aqui sua matrícula")) {
+                if (!nome.text.contentEquals("") and !nome.text.contentEquals("Insira aqui seu nome") and !idade.text.contentEquals("")
+                    and !idade.text.contentEquals("Insira aqui sua idade") and !matricula.text.contentEquals("") and !matricula.text.contentEquals("") and !matricula.text.contentEquals("Insira aqui sua matrícula")) {
                 val bundle = Bundle()
                 bundle.putString("nome", nome.text.toString())
                 bundle.putInt("idade", idade.text.toString().toInt())
+                bundle.putString("matricula", matricula.text.toString())
 
-                val intent = Intent(this, Pesquisa1::class.java)
+                val intent = Intent(this@MainActivity, Pesquisa1::class.java)
                 intent.putExtras(bundle)
                 startActivity(intent)
             } else {
