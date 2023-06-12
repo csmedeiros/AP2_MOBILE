@@ -1,15 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
                                              android:layout_height="match_parent">
+
+    <!-- Adicione um LinearLayout para agrupar as CheckBox -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/checkbox_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button">
+
+        <!-- CheckBox para cada disciplina -->
+        <!-- ... -->
+
+    </LinearLayout>
 
     <Button
             android:text="Button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.499"/>
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- TextView para exibir a mensagem de erro -->
+    <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Por favor, selecione pelo menos 7 disciplinas para que seja possível uma melhor avaliação."
+            android:textColor="#FF0000"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

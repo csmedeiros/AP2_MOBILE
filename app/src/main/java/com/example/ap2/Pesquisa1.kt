@@ -1,14 +1,16 @@
 package com.example.ap2
 
-import android.annotation.SuppressLint
+import Pesquisa2
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.MediaStore.Audio.Radio
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 
 class Pesquisa1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +41,7 @@ class Pesquisa1 : AppCompatActivity() {
         erro.visibility = View.INVISIBLE
         val bundle = Bundle()
         
-        groupCursos.setOnCheckedChangeListener { group, checkedId ->
+        groupCursos.setOnCheckedChangeListener { _, checkedId ->
                     if(ads.isChecked || engcomp.isChecked || cdia.isChecked) {
                         bundle.putString("curso", "ADS")
                         Log.d("Pesquisa1", checkedId.toString())
