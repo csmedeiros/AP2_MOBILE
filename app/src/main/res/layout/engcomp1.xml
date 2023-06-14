@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+    <TextView
+            android:text="Escolha as disciplinas que gostou de cursar - Página 1\n Marque ao menos 3 disciplinas por página"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvEscolha"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/checkbox_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+            android:id="@+id/checkbox_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnProx"
+            android:layout_marginTop="20dp">
+
+        <!-- CheckBoxes para as disciplinas -->
+        <CheckBox
+                android:id="@+id/checkbox_calculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CÁLCULO A UMA VARIÁVEL"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_geometria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GEOMETRIA ANALÍTICA E ÁLGEBRA LINEAR"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_matematica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MATEMÁTICA DISCRETA"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_pensamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PENSAMENTO COMPUTACIONAL"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_programacao_estruturada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROGRAMAÇÃO ESTRUTURADA"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_arquitetura_computadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARQUITETURA DE COMPUTADORES"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_desenvolvimento_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESENVOLVIMENTO WEB"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_design_grafico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESIGN GRÁFICO E USER EXPERIENCE"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_metodos_ageis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MÉTODOS ÁGEIS DE DESENVOLVIMENTO DE SOFTWARE"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_estruturas_dados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ESTRUTURAS DE DADOS"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_metodos_quantitativos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MÉTODOS QUANTITATIVOS"/>
+        <CheckBox
+                android:id="@+id/checkbox_padroes_projeto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PADRÕES E PROJETO DE SOFTWARE"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_programacao_orientada_objetos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROGRAMAÇÃO ORIENTADA A OBJETOS"/>
+
+
+    </LinearLayout>
+    <Button
+            android:id="@+id/btnProx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Próxima página"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="80dp"/>
+    <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/btnProx"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+</android.support.constraint.ConstraintLayout>

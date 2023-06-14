@@ -23,10 +23,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".Pesquisa1"/>
+        <activity android:name=".EngComp1"/>
+        <activity android:name=".EngComp2"/>
+        <activity android:name=".EngComp3"/>
+        <activity android:name=".CDIA1"/>
+        <activity android:name=".CDIA2"/>
+        <activity android:name=".CDIA3"/>
+        <activity android:name=".ADS1"/>
+        <activity android:name=".ADS2"/>
+        <activity android:name=".ADS3"/>
         <activity android:name=".Pesquisa2"/>
-        <activity android:name=".Pesquisa3"/>
 
         </application>
 
-    </manifest>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+</manifest>
 

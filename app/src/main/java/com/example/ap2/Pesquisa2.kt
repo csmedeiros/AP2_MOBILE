@@ -1,61 +1,47 @@
+package com.example.ap2
 
-import android.content.Intent
+import ChatGPTIntegration
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.LinearLayout
+import android.util.Log
 import android.widget.TextView
-import com.example.ap2.Pesquisa3
-import com.example.ap2.R
 
 class Pesquisa2 : AppCompatActivity() {
-
-    private var selectedCount = 0
-    private lateinit var errorMessage: TextView
+    private val gpt = ChatGPTIntegration()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pesquisa2)
 
-        errorMessage = findViewById(R.id.error_message)
-
-        val checkboxContainer = findViewById<LinearLayout>(R.id.checkbox_container)
-
-        // Adicione listeners para as CheckBox
-        for (i in 0 until checkboxContainer.childCount) {
-            val checkBox = checkboxContainer.getChildAt(i) as CheckBox
-            checkBox.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked) {
-                    selectedCount++
-                } else {
-                    selectedCount--
-                }
-                updateButtonState()
-            }
+        fun recuperaDados(): ArrayList<String>? {
+            val infos = intent.getStringArrayListExtra("infos")
+            return infos
         }
 
-        val button = findViewById<Button>(R.id.button)
-        button.setOnClickListener {
-            // Verificar se o requisito mínimo de seleção é atendido
-            if (selectedCount >= 7) {
-                // Navegar para a atividade Pesquisa3
-                val intent = Intent(this, Pesquisa3::class.java)
-                startActivity(intent)
-            } else {
-                // Exibir mensagem de erro
-                errorMessage.visibility = View.VISIBLE
-            }
+        fun recuperaDisciplinas(): Array<out String>? {
+            val disciplinas = intent.getStringArrayExtra("selectedCheckboxes")
+            return disciplinas
         }
 
-        // Atualizar o estado inicial do botão
-        updateButtonState()
-    }
+        Log.d("Pesquisa2", recuperaDisciplinas().toString())
 
-    private fun updateButtonState() {
-        val button = findViewById<Button>(R.id.button)
-        button.isEnabled = selectedCount >= 7
-        errorMessage.visibility = View.GONE
+        val chatGPTIntegration = ChatGPTIntegration()
+        val apiKey = "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"
+        val message = "Para um aluno de Engenharia da Computação, quais as profissões na área de tecnologia mais adequadas para ele trabalhar considerando que as disciplinas que ele gosta são:" + recuperaDisciplinas()?.joinToString(", ") + "\n\nFormula as respostas, restringindo-se as disciplinas fornecidas e com profissões diferenciadas. A formatação da sua resposta deve ser:\nAqui estão algumas profissões em que você utilizará os conceitos das disciplinas que selecionou:\n<Profissões>\nO CASA e Carreiras Ibmec agradece a sua participação. Insira abaixo seu e-mail para enviarmos o resultado desse teste."
+
+        val response = chatGPTIntegration.sendMessage(message, apiKey)
+        if (response != null) {
+            // Faça algo com a resposta gerada pelo ChatGPT
+            println(response)
+        } else {
+            // Trate o caso em que nenhuma resposta foi gerada ou ocorreu um erro
+            println("Erro ao obter resultado da pesquisa.\nVerifique sua conexão com a Internet ou tente novamente mais tarde.")
+        }
+
+        val interacao = findViewById<TextView>(R.id.tvInteracao)
+        val textoInteracao = "Muito bem, ${recuperaDados()?.get(0)}!\nDe acordo com as disciplinas selecionadas e seus conteúdos, selecionamos algumas profissões.\n\n$response"
+        interacao.text = textoInteracao
+        interacao.setTextColor(Color.GREEN)
     }
 }

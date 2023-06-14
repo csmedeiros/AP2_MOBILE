@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+            android:text="Escolha as disciplinas que gostou de cursar - Página 1\n Marque ao menos 3 disciplinas por página"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvEscolha"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/checkbox_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/checkbox_container"
+            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- CheckBoxes para as disciplinas -->
+        <CheckBox
+                android:id="@+id/checkbox_calculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CÁLCULO A UMA VARIÁVEL"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_geometria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GEOMETRIA ANALÍTICA E ÁLGEBRA LINEAR"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_matematica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MATEMÁTICA DISCRETA"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_pensamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PENSAMENTO COMPUTACIONAL"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_programacao_estruturada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROGRAMAÇÃO ESTRUTURADA"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_arquitetura_computadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARQUITETURA DE COMPUTADORES"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_desenvolvimento_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESENVOLVIMENTO WEB"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_design_grafico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESIGN GRÁFICO E USER EXPERIENCE"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_metodos_ageis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MÉTODOS ÁGEIS DE DESENVOLVIMENTO DE SOFTWARE"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="Selecione pelo menos 3 disciplinas."
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintBottom_toTopOf="@+id/btnProx"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+            android:id="@+id/btnProx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Próxima página"
+            android:layout_marginTop="144dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
+
+</android.support.constraint.ConstraintLayout>

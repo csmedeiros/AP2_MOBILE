@@ -1,6 +1,5 @@
 package com.example.ap2
 
-import Pesquisa2
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -18,18 +17,16 @@ class Pesquisa1 : AppCompatActivity() {
         setContentView(R.layout.pesquisa1)
 
         val extras = intent.extras
+        val bundle = Bundle()
 
-        fun recuperaDados():List<String> {
-                val nome = extras?.getString("nome")
-                val idade = extras?.getInt("idade")
-                val matricula = extras?.getInt("matricula")
-                // Faça o que deseja com os dados recuperados
-                // por exemplo, exiba-os em uma TextView ou realize alguma lógica com eles
-                val dados: List<String> = listOf(nome.toString(), idade.toString(), matricula.toString())
-                return dados
+        fun recuperaDados(): ArrayList<String>? {
+            val dados = extras?.getStringArrayList("infos")
+            val infos = intent.getStringArrayListExtra("infos")
+            return infos
         }
+        Log.d("Pesquisa1", recuperaDados().toString())
 
-        val recepcaoStr = "Olá " + recuperaDados()[0] + ", seja bem vindo!\n Primeiramente selecione seu curso"
+        val recepcaoStr = "Olá " + recuperaDados()?.get(0) + ", seja bem vindo!\nPrimeiramente selecione seu curso"
         val recepcao = findViewById<TextView>(R.id.tvRecepcao)
         val cdia = findViewById<RadioButton>(R.id.cbCDIA)
         val engcomp = findViewById<RadioButton>(R.id.cbENGCOMP)
@@ -39,23 +36,47 @@ class Pesquisa1 : AppCompatActivity() {
         val erro = findViewById<TextView>(R.id.tvErroRadioButton)
         erro.setTextColor(Color.RED)
         erro.visibility = View.INVISIBLE
-        val bundle = Bundle()
-        
+
         groupCursos.setOnCheckedChangeListener { _, checkedId ->
-                    if(ads.isChecked || engcomp.isChecked || cdia.isChecked) {
-                        bundle.putString("curso", "ADS")
-                        Log.d("Pesquisa1", checkedId.toString())
-                        erro.visibility = View.INVISIBLE
-                        prox.setOnClickListener {
-                            val intent = Intent(this@Pesquisa1, Pesquisa2::class.java)
+            if (checkedId > 0) {
+                Log.d("Pesquisa1", checkedId.toString())
+                erro.visibility = View.INVISIBLE
+                prox.setOnClickListener {
+                    val infos = ArrayList<String>()
+                    // Passar nome, idade e matrícula para o bundle
+                    val intent:Intent
+                    when {
+                        engcomp.isChecked -> {
+                            bundle.putString("curso", engcomp.text.toString())
+                            bundle.putStringArrayList("infos", recuperaDados())
+
+                            intent = Intent(this@Pesquisa1, EngComp1::class.java)
                             intent.putExtras(bundle)
+                            Log.d("Pesquisa1", bundle.toString())
                             startActivity(intent)
                         }
-                    }
-                    else {
-                        erro.visibility = View.VISIBLE
+                        cdia.isChecked -> {
+                            bundle.putString("curso", cdia.text.toString())
+                            bundle.putStringArrayList("infos", recuperaDados())
+                            intent = Intent(this@Pesquisa1, CDIA1::class.java)
+                            intent.putExtras(bundle)
+                            Log.d("Pesquisa1", bundle.toString())
+                            startActivity(intent)
                         }
+                        ads.isChecked -> {
+                            bundle.putString("curso", ads.text.toString())
+                            bundle.putStringArrayList("infos", recuperaDados())
+                            intent = Intent(this@Pesquisa1, ADS1::class.java)
+                            intent.putExtras(bundle)
+                            Log.d("Pesquisa1", bundle.toString())
+                            startActivity(intent)
+                        }
+
+                    }
                 }
-        recepcao.setText(recepcaoStr)
+            }
+        }
+
+        recepcao.text = recepcaoStr
     }
 }
