@@ -77,7 +77,7 @@ class Pagina1 : AppCompatActivity() {
                 val intent = Intent(this@Pagina1, Pagina2::class.java)
                 intent.putExtras(bundle)
                 Log.d("Pagina1", "Pagina1")
-                Log.d("MainActivity", intent.extras.toString())
+                Log.d("Pagina1", intent.extras.toString())
                 startActivity(intent)
             }
         }

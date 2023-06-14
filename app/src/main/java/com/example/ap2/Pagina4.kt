@@ -23,18 +23,11 @@ class Pagina4 : AppCompatActivity() {
             return infos
         }
 
-
-
         button.setOnClickListener {
-            // Passar nome, idade e matrícula para o bundle
-            intent.putStringArrayListExtra("infos", recuperaDados())
-
-            // Criar uma lista para armazenar as checkboxes selecionadas
             val selectedCheckboxes = ArrayList<String>()
 
             val checkboxContainer = findViewById<LinearLayout>(R.id.checkbox_container)
 
-            // Percorrer todas as checkboxes e adicionar as selecionadas à lista
             for (i in 0 until checkboxContainer.childCount) {
                 val checkBox = checkboxContainer.getChildAt(i) as CheckBox
                 if (checkBox.isChecked) {
@@ -43,15 +36,15 @@ class Pagina4 : AppCompatActivity() {
                 }
             }
 
-            // Passar a lista para a próxima atividade
-            val intent = Intent(this@Pagina4, Pagina5::class.java)
-            Log.d("Pesquisa4", "Obtendo 1 e 2")
-            for(i in 1 until 3) {
-                val resposta = intent.getStringExtra("$i")
-                bundle.putString("$i", resposta)
-            }
+            val resposta1 = intent.getStringExtra("1")
+            val resposta2 = intent.getStringExtra("2")
+
+            bundle.putString("1", resposta1)
+            bundle.putString("2", resposta2)
+            bundle.putStringArrayList("3", selectedCheckboxes)
             bundle.putStringArrayList("infos", recuperaDados())
-            Log.d("Pesquisa4", "infos adicionada")
+
+            val intent = Intent(this@Pagina4, Pagina5::class.java)
             intent.putExtras(bundle)
             Log.d("Pagina4", "Pagina4")
             Log.d("Pagina4", bundle.toString())

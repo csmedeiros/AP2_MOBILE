@@ -16,7 +16,7 @@ class Pagina2 : AppCompatActivity() {
 
         val bundle = Bundle()
         val infos = intent.getStringArrayListExtra("infos")
-        val recepcaoStr = "Olá " + infos?.get(0) + ", agora está tudo bem!\n A Polícia Cívil está aqui para ajudá-la"
+        val recepcaoStr = "Olá " + infos?.get(0) + ", agora está tudo bem!\n A Polícia Civil está aqui para ajudá-la"
         val recepcao = findViewById<TextView>(R.id.tvRecepcao)
         val maisDeUmaVez = findViewById<RadioButton>(R.id.rbMaisDeUmaVez)
         val umaVez = findViewById<RadioButton>(R.id.rbUmaVez)
@@ -29,7 +29,7 @@ class Pagina2 : AppCompatActivity() {
 
         groupCursos.setOnCheckedChangeListener { _, checkedId ->
             if (checkedId > 0) {
-                Log.d("Pesquisa1", checkedId.toString())
+                Log.d("Pagina2", checkedId.toString())
 
                 // Armazenar a opção selecionada na variável
                 opcaoSelecionada = when (checkedId) {
@@ -43,34 +43,14 @@ class Pagina2 : AppCompatActivity() {
 
         prox.setOnClickListener {
 
-                when {
-                    maisDeUmaVez.isChecked-> {
-                        val intent = Intent(this@Pagina2, Pagina3::class.java)
-                        bundle.putString("1", maisDeUmaVez.text.toString())
-                        bundle.putStringArrayList("infos", infos)
-                        intent.putExtras(bundle)
-                        Log.d("Pagina2", "Pagina2")
-                        Log.d("Pagina2", bundle.toString())
-                        startActivity(intent)
-                    }
-                    nunca.isChecked -> {
-                        val intent = Intent(this@Pagina2, Pagina3::class.java)
-                        bundle.putString("1", nunca.text.toString())
-                        intent.putExtras(bundle)
-                        Log.d("Pagina2", "Pagina2")
-                        Log.d("Pagina2", bundle.toString())
-                        startActivity(intent)
-                    }
-                    umaVez.isChecked-> {
-                        val intent = Intent(this@Pagina2, Pagina3::class.java)
-                        bundle.putString("1", umaVez.text.toString())
-                        intent.putExtras(bundle)
-                        Log.d("Pagina2", "Pagina2")
-                        Log.d("Pagina2", bundle.toString())
-                        startActivity(intent)
-                    }
-                }
-            }
+            val intent = Intent(this@Pagina2, Pagina3::class.java)
+            bundle.putString("1", opcaoSelecionada)
+            bundle.putStringArrayList("infos", infos)
+            intent.putExtras(bundle)
+            Log.d("Pagina2", "Pagina2")
+            Log.d("Pagina2", bundle.toString())
+            startActivity(intent)
+        }
 
         recepcao.text = recepcaoStr
     }
