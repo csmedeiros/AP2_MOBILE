@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
     <TextView
-            android:text=""
-            android:textSize="14dp"
+            android:text="1. O autor já ameaçou você ou outro\nfamiliar usando faca ou arma de fogo?"
+            android:textSize="20dp"
             android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -16,9 +16,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.243"
-            app:layout_constraintHorizontal_bias="0.498"/>
-
+            app:layout_constraintVertical_bias="0.223"
+            app:layout_constraintHorizontal_bias="0.492"/>
     <TextView
             android:text=""
             android:textSize="28dp"
@@ -30,9 +29,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.063"
+            app:layout_constraintVertical_bias="0.064"
             app:layout_constraintHorizontal_bias="0.498"/>
-
     <RadioGroup
             android:layout_width="296dp"
             android:layout_height="185dp"
@@ -45,10 +43,10 @@
             app:layout_constraintVertical_bias="0.633">
 
         <RadioButton
-                android:text="Ciência de Dados e I.A"
+                android:text="Mais de uma vez"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbCDIA"
+                android:id="@+id/rbMaisDeUmaVez"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,19 +55,19 @@
                 app:layout_constraintVertical_bias="0.6"/>
 
         <RadioButton
-                android:text="Análise e Desenvolvimento de Sistemas"
+                android:text="Uma vez"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbADS"
+                android:id="@+id/rbUmaVez"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintVertical_bias="0.693"/>
         <RadioButton
-                android:text="Engenharia da Computação"
+                android:text="Nunca"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/cbENGCOMP"
+                android:layout_height="wrap_content" android:id="@+id/rbNunca"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -83,15 +81,4 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintVertical_bias="0.805"/>
-    <TextView
-            android:text="Selecione seu curso antes de passar\n para a próxima etapa"
-            android:textAlignment="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/tvErroRadioButton"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.914"/>
-
-
 </android.support.constraint.ConstraintLayout>

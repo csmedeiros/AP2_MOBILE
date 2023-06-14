@@ -4,9 +4,11 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
+
     <TextView
-            android:text="Escolha as disciplinas que gostou de cursar - Página 1\n Marque ao menos 3 disciplinas por página"
+            android:text="O autor já apresentou algum desses comportamentos?"
             android:textAlignment="center"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvEscolha"
@@ -14,97 +16,75 @@
             app:layout_constraintBottom_toTopOf="@+id/checkbox_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.47"/>
     <LinearLayout
-            android:id="@+id/checkbox_container"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
+            android:id="@+id/checkbox_container"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
             app:layout_constraintBottom_toTopOf="@+id/btnProx"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="200dp" app:layout_constraintHorizontal_bias="0.0">
 
-        <!-- CheckBoxes para as disciplinas -->
-        <CheckBox
-                android:id="@+id/checkbox_calculo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CÁLCULO A UMA VARIÁVEL"/>
+        <!-- CheckBoxes para os comportamentos -->
 
         <CheckBox
-                android:id="@+id/checkbox_geometria"
+                android:id="@+id/checkBox_a"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GEOMETRIA ANALÍTICA E ÁLGEBRA LINEAR"/>
+                android:text="O autor disse algo parecido com a frase: “se não for minha, não será de mais ninguém”."/>
+        <CheckBox
+                android:id="@+id/checkBox_b"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O autor te perturba, persegue ou vigia nos locais em que você frequenta"/>
 
         <CheckBox
-                android:id="@+id/checkbox_matematica"
+                android:id="@+id/checkBox_c"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MATEMÁTICA DISCRETA"/>
+                android:text="O autor proíbe você de ir ao médico ou pedir ajuda a outros profissionais"/>
 
         <CheckBox
-                android:id="@+id/checkbox_pensamento"
+                android:id="@+id/checkBox_d"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PENSAMENTO COMPUTACIONAL"/>
+                android:text="O autor proíbe você de visitar familiares ou amigos"/>
 
         <CheckBox
-                android:id="@+id/checkbox_programacao_estruturada"
+                android:id="@+id/checkBox_e"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROGRAMAÇÃO ESTRUTURADA"/>
+                android:text="O autor proíbe você de trabalhar ou estudar"/>
 
         <CheckBox
-                android:id="@+id/checkbox_arquitetura_computadores"
+                android:id="@+id/checkBox_f"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ARQUITETURA DE COMPUTADORES"/>
+                android:text="O autor fez telefonemas, enviou mensagens pelo celular ou e-mails de forma insistente"/>
 
         <CheckBox
-                android:id="@+id/checkbox_desenvolvimento_web"
+                android:id="@+id/checkBox_g"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DESENVOLVIMENTO WEB"/>
+                android:text="O autor impede você de ter acesso a dinheiro, conta bancária ou outros bens (como documentos pessoais, carro)"/>
 
         <CheckBox
-                android:id="@+id/checkbox_design_grafico"
+                android:id="@+id/checkBox_h"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DESIGN GRÁFICO E USER EXPERIENCE"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_metodos_ageis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MÉTODOS ÁGEIS DE DESENVOLVIMENTO DE SOFTWARE"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_estruturas_dados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ESTRUTURAS DE DADOS"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_metodos_quantitativos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MÉTODOS QUANTITATIVOS"/>
-        <CheckBox
-                android:id="@+id/checkbox_padroes_projeto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PADRÕES E PROJETO DE SOFTWARE"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_programacao_orientada_objetos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PROGRAMAÇÃO ORIENTADA A OBJETOS"/>
-
+                android:text="Outros comportamentos de ciúmes excessivo e de controle sobre você"/>
 
     </LinearLayout>
     <Button
@@ -128,5 +108,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5" />
-
 </android.support.constraint.ConstraintLayout>

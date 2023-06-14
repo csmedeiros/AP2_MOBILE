@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+            android:text="O autor já obrigou você a fazer sexo ou\npraticar atos sexuais sem sua vontade?"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvEscolha"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintVertical_bias="0.186" app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:id="@+id/checkbox_container2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEscolha2"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.155">
+
+        <!-- CheckBoxes para as opções -->
+
+        <CheckBox
+                android:id="@+id/checkbox_mais_uma_vez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mais de uma vez"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_uma_vez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uma vez"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_nunca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nunca"/>
+
+    </LinearLayout>
+
+
+    <TextView
+            android:text=" O autor faz uso de álcool\nou outras drogas?"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvEscolha2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/checkbox_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.102">
+
+        <!-- CheckBoxes para as opções -->
+
+        <CheckBox
+                android:id="@+id/checkbox_sim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sim"/>
+
+        <CheckBox
+                android:id="@+id/checkbox_nao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não"/>
+
+    </LinearLayout>
+    <Button
+            android:id="@+id/btnProx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Próximo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.881"/>
+    <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/btnProx"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+</android.support.constraint.ConstraintLayout>

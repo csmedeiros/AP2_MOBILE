@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity" tools:layout_editor_absoluteY="98dp" tools:layout_editor_absoluteX="0dp">
+        tools:context=".Pagina1" tools:layout_editor_absoluteY="98dp" tools:layout_editor_absoluteX="0dp">
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -15,12 +15,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.236"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.103"
     />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Certifique-se que o campo Nome\ne Idade estão preenchidos"
+            android:text="Certifique-se que todos os campos\n estão preenchidos"
             android:textSize="15dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.701"
             android:id="@+id/tvErroNomeIdade"/>
     <Button
-            android:text="Iniciar pesquisa"
+            android:text="Próximo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/btnPesquisa"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -39,10 +39,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Insira aqui sua idade"
+            android:text="Idade do Autor"
             android:textAlignment="center"
             android:ems="10"
-            android:id="@+id/etIdade"
+            android:id="@+id/etIdadeAutor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.502"
@@ -51,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Insira aqui sua matrícula"
+            android:text="Nome do Autor"
             android:textAlignment="center"
             android:ems="10"
-            android:id="@+id/etMatricula"
+            android:id="@+id/etNomeAutor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
@@ -63,19 +63,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Insira aqui seu nome"
+            android:text="Idade da Vítima"
             android:textAlignment="center"
             android:ems="10"
-            android:id="@+id/etNome"
+            android:id="@+id/etIdadeVitima"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintVertical_bias="0.428"/>
-    <ImageView
-            android:layout_width="211dp"
-            android:layout_height="137dp" app:srcCompat="@drawable/ibmec_casa_logo" android:id="@+id/imageView"
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Nome da Vítima"
+            android:textAlignment="center"
+            android:ems="10"
+            android:id="@+id/etNomeVitima"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.005"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintVertical_bias="0.335"/>
 
 </android.support.constraint.ConstraintLayout>

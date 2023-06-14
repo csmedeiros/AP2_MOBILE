@@ -6,7 +6,8 @@
                                              android:layout_height="match_parent">
 
     <TextView
-            android:text="Escolha as disciplinas que gostou de cursar - Página 2\n Marque ao menos 3 disciplinas por página"
+            android:text=" Você já sofreu algumas dessas agressões físicas?"
+            android:textSize="20dp"
             android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -15,96 +16,74 @@
             app:layout_constraintBottom_toTopOf="@+id/checkbox_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.528"/>
     <LinearLayout
+            android:id="@+id/checkbox_container"
+            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/checkbox_container"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
-            app:layout_constraintBottom_toTopOf="@+id/btnProx"
-            android:layout_marginTop="100dp">
-
-        <!-- CheckBoxes para as disciplinas -->
+            android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" tools:layout_editor_absoluteX="16dp"
+            app:layout_constraintVertical_bias="0.588">
 
         <CheckBox
-                android:id="@+id/checkbox_projeto_backend"
+                android:id="@+id/checkBox_queimadura"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROJETO BACK-END" />
+                android:text="Queimadura"/>
 
         <CheckBox
-                android:id="@+id/checkbox_eletricidade_eletromagnetismo"
+                android:id="@+id/checkBox_enforcamento"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ELETRICIDADE E ELETROMAGNETISMO" />
+                android:text="Enforcamento"/>
 
         <CheckBox
-                android:id="@+id/checkbox_engenharia_dados"
+                android:id="@+id/checkBox_sufocamento"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ENGENHARIA DE DADOS" />
+                android:text="Sufocamento"/>
 
         <CheckBox
-                android:id="@+id/checkbox_principio_padroes_redes"
+                android:id="@+id/checkBox_tiro"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PRINCÍPIO E PADRÕES DE REDES DE COMPUTADORES" />
+                android:text="Tiro"/>
 
         <CheckBox
-                android:id="@+id/checkbox_projeto_sistemas_embarcados"
+                android:id="@+id/checkBox_afogamento"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROJETO DE SISTEMAS EMBARCADOS" />
+                android:text="Afogamento"/>
 
         <CheckBox
-                android:id="@+id/checkbox_sistemas_embarcados_iot"
+                android:id="@+id/checkBox_osso_quebrado"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SISTEMAS EMBARCADOS E INTERNET DAS COISAS" />
+                android:text="Osso quebrado"/>
 
         <CheckBox
-                android:id="@+id/checkbox_ligacoes_interredes"
+                android:id="@+id/checkBox_facada"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LIGAÇÕES INTER-REDES" />
+                android:text="Facada"/>
 
         <CheckBox
-                android:id="@+id/checkbox_modelagem_computacional"
+                android:id="@+id/checkBox_paulada"
+                android:layout_marginBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MODELAGEM COMPUTACIONAL" />
-
-        <CheckBox
-                android:id="@+id/checkbox_projeto_redes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PROJETO DE REDES" />
-
-        <CheckBox
-                android:id="@+id/checkbox_seguranca_plataformas_redes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SEGURANÇA EM PLATAFORMAS E REDES DE COMPUTADORES" />
-
-        <CheckBox
-                android:id="@+id/checkbox_sistemas_digitais"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SISTEMAS DIGITAIS" />
-
-        <CheckBox
-                android:id="@+id/checkbox_analise_complexidade_algoritmos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ANÁLISE E COMPLEXIDADE DE ALGORITMOS" />
+                android:text="Paulada"/>
 
     </LinearLayout>
-
     <Button
             android:id="@+id/btnProx"
             android:layout_width="wrap_content"
@@ -126,4 +105,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5" />
+
 </android.support.constraint.ConstraintLayout>
