@@ -15,7 +15,7 @@ import android.widget.ImageButton
 
 class DialFragment : Fragment() {
 
-    private val phoneNumber = "21995049864"
+    private val phoneNumber = "+5521995049864" 
     private val requestCode = 1
 
     override fun onCreateView(
