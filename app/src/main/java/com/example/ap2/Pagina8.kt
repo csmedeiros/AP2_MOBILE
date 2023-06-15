@@ -15,9 +15,9 @@ class Pagina8 : AppCompatActivity() {
         val q2 = intent.getStringExtra("2")
         val q3 = intent.getStringArrayListExtra("3")
         val q4 = intent.getStringExtra("4")
-        val q5 = intent.getStringArrayListExtra("5")
+        val q5 = intent.getStringExtra("5")
         val q6 = intent.getStringExtra("6")
-        val q7 = intent.getStringArrayListExtra("7")
+        val q7 = intent.getStringExtra("7")
         val infos = intent.getStringArrayListExtra("infos")
 
         Log.d("Pagina8", "Pagina8")

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.RadioButton
 
@@ -17,6 +16,8 @@ class Pagina7 : AppCompatActivity() {
         val umaVez = findViewById<RadioButton>(R.id.checkbox_uma_vez)
         val maisDeUmaVez = findViewById<RadioButton>(R.id.checkbox_mais_uma_vez)
         val nunca = findViewById<RadioButton>(R.id.checkbox_nunca)
+        val sim = findViewById<RadioButton>(R.id.checkbox_sim)
+        val nao = findViewById<RadioButton>(R.id.checkbox_nao)
         val checkboxContainer1 = findViewById<LinearLayout>(R.id.checkbox_container)
 
         val bundle = Bundle()
@@ -31,34 +32,35 @@ class Pagina7 : AppCompatActivity() {
 
 
         button.setOnClickListener {
+
+            if (sim.isChecked) {
+                bundle.putString("6", sim.text.toString())
+            }
+
+            if(nao.isChecked) {
+                bundle.putString("6", nao.text.toString())
+            }
+
             if (umaVez.isChecked) {
-                bundle.putString("4", umaVez.text.toString())
+                bundle.putString("7", umaVez.text.toString())
             }
 
             if (maisDeUmaVez.isChecked) {
-                bundle.putString("4", maisDeUmaVez.text.toString())
+                bundle.putString("7", maisDeUmaVez.text.toString())
             }
 
             if (nunca.isChecked) {
-                bundle.putString("4", nunca.text.toString())
+                bundle.putString("7", nunca.text.toString())
             }
-            val selectedCheckboxes1 = ArrayList<String>()
 
-            for (i in 0 until checkboxContainer1.childCount) {
-                val checkBox = checkboxContainer1.getChildAt(i) as CheckBox
-                if (checkBox.isChecked) {
-                    Log.d("Pagina7", checkBox.text.toString())
-                    selectedCheckboxes1.add(checkBox.text.toString())
-                }
-            }
+
 
             bundle.putString("1", intent.getStringExtra("1"))
             bundle.putString("2", intent.getStringExtra("2"))
             bundle.putStringArrayList("3", intent.getStringArrayListExtra("3"))
             bundle.putString("4", intent.getStringExtra("4"))
-            bundle.putStringArrayList("5", intent.getStringArrayListExtra("5"))
+            bundle.putString("5", intent.getStringExtra("5"))
             bundle.putString("6", intent.getStringExtra("6"))
-            bundle.putStringArrayList("7", selectedCheckboxes1)
             bundle.putStringArrayList("infos", recuperaDados())
 
             val intent = Intent(this@Pagina7, Pagina8::class.java)

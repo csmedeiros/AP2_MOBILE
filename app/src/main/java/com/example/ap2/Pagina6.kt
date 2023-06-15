@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.RadioButton
 
@@ -16,6 +15,9 @@ class Pagina6 : AppCompatActivity() {
         val umaVez = findViewById<RadioButton>(R.id.checkbox_uma_vez)
         val maisDeUmaVez = findViewById<RadioButton>(R.id.checkbox_mais_uma_vez)
         val nunca = findViewById<RadioButton>(R.id.checkbox_nunca)
+        val umaVez2 = findViewById<RadioButton>(R.id.checkbox_uma_vez2)
+        val maisDeUmaVez2 = findViewById<RadioButton>(R.id.checkbox_mais_uma_vez2)
+        val nunca2 = findViewById<RadioButton>(R.id.checkbox_nunca2)
         val checkboxContainer2 = findViewById<LinearLayout>(R.id.checkbox_container2)
         val bundle = Bundle()
 
@@ -46,22 +48,25 @@ class Pagina6 : AppCompatActivity() {
                 }
 
 
-                val selectedCheckboxes2 = ArrayList<String>()
 
 
-                for (i in 0 until checkboxContainer2.childCount) {
-                    val checkBox = checkboxContainer2.getChildAt(i) as CheckBox
-                    if (checkBox.isChecked) {
-                        Log.d("Pagina6", checkBox.text.toString())
-                        selectedCheckboxes2.add(checkBox.text.toString())
-                    }
+                if (umaVez2.isChecked) {
+                    bundle.putString("5", umaVez2.text.toString())
+                }
+
+                if (maisDeUmaVez2.isChecked) {
+                    bundle.putString("5", maisDeUmaVez2.toString())
+                }
+
+                if (nunca2.isChecked) {
+                    bundle.putString("5", nunca2.text.toString())
                 }
 
                 bundle.putString("1", intent.getStringExtra("1"))
                 bundle.putString("2", intent.getStringExtra("2"))
                 bundle.putStringArrayList("3", intent.getStringArrayListExtra("3"))
                 bundle.putString("4", intent.getStringExtra("4"))
-                bundle.putStringArrayList("5", selectedCheckboxes2)
+
 
                 bundle.putStringArrayList("infos", recuperaDados())
 

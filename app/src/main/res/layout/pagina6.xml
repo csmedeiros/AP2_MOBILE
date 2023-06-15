@@ -5,6 +5,12 @@
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
+    <ImageView
+            android:layout_width="259dp"
+            android:layout_height="130dp" app:srcCompat="@drawable/download" android:id="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="1.0"/>
     <TextView
             android:text="O autor já obrigou você a fazer sexo ou\npraticar atos sexuais sem sua vontade?"
             android:textSize="20dp"
@@ -12,24 +18,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvEscolha"
-            android:layout_marginTop="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/checkbox_container"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintVertical_bias="0.875"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.069"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"/>
     <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/checkbox_container"
-            android:layout_marginTop="500dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
-            app:layout_constraintBottom_toTopOf="@+id/btnProx"
-            app:layout_constraintHorizontal_bias="1.0">
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.64">
 
         <!-- CheckBoxes para as opções -->
 
@@ -59,69 +58,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvEscolha2"
-            app:layout_constraintBottom_toTopOf="@+id/checkbox_container"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.138"/>
-    <LinearLayout
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" app:layout_constraintVertical_bias="0.465"/>
+    <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
             android:id="@+id/checkbox_container2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEscolha"
-            app:layout_constraintBottom_toTopOf="@+id/btnProx"
 
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.354">
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.19">
 
 
         <!-- CheckBoxes para as opções -->
 
-        <CheckBox
-                android:id="@+id/checkbox_tapas"
+        <RadioButton
+                android:id="@+id/checkbox_nunca2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tapas"/>
+                android:text="Nunca"/>
 
-        <CheckBox
-                android:id="@+id/checkbox_empurrao"
+        <RadioButton
+                android:id="@+id/checkbox_mais_uma_vez2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Empurrão"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_puxoes_cabelo"
+                android:text="Mais de uma vez"/>
+        <RadioButton
+                android:id="@+id/checkbox_uma_vez2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Puxões de cabelo"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_socos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Socos"/>
-
-        <CheckBox
-                android:id="@+id/checkbox_chute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chute"/>
-
-    </LinearLayout>
+                android:text="Uma vez"/>
+    </RadioGroup>
     <Button
             android:id="@+id/btnProx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Próximo"
-            app:layout_constraintTop_toBottomOf="@+id/checkbox_container"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="32dp" app:layout_constraintHorizontal_bias="0.498"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.781"/>
     <TextView
             android:id="@+id/error_message"
             android:layout_width="wrap_content"
@@ -133,6 +110,6 @@
             app:layout_constraintTop_toBottomOf="@+id/btnProx"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" />
+            app:layout_constraintHorizontal_bias="0.5"/>
 
 </android.support.constraint.ConstraintLayout>
