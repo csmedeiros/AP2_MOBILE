@@ -5,18 +5,19 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
-import android.widget.CheckBox
-import android.widget.LinearLayout
+import android.widget.RadioButton
 
 class Pagina5 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pagina5)
 
-        val checkboxContainer = findViewById<LinearLayout>(R.id.checkbox_container)
-        val bundle = Bundle()
-
+        val checkboxSimDf = findViewById<RadioButton>(R.id.checkbox_sim_df)
+        val checkboxSimForaDf = findViewById<RadioButton>(R.id.checkbox_sim_fora_df)
+        val checkboxNao = findViewById<RadioButton>(R.id.checkbox_nao)
         val button = findViewById<Button>(R.id.btnProx)
+
+        val bundle = Bundle()
 
         fun recuperaDados(): ArrayList<String>? {
             val infos = intent.getStringArrayListExtra("infos")
@@ -24,32 +25,32 @@ class Pagina5 : AppCompatActivity() {
         }
 
         button.setOnClickListener {
-            val selectedCheckboxes = ArrayList<String>()
+            var selectedCheckboxes:String
 
-            val checkboxContainer = findViewById<LinearLayout>(R.id.checkbox_container)
-
-            for (i in 0 until checkboxContainer.childCount) {
-                val checkBox = checkboxContainer.getChildAt(i) as CheckBox
-                if (checkBox.isChecked) {
-                    Log.d("Pagina5", checkBox.text.toString())
-                    selectedCheckboxes.add(checkBox.text.toString())
-                }
+            if (checkboxSimDf.isChecked) {
+                selectedCheckboxes = checkboxSimDf.text.toString()
+                bundle.putString("4", selectedCheckboxes)
             }
 
-            val previousSelectedCheckboxes = intent.getStringArrayListExtra("selectedCheckboxes")
-            if (previousSelectedCheckboxes != null) {
-                selectedCheckboxes.addAll(previousSelectedCheckboxes)
+            if (checkboxSimForaDf.isChecked) {
+                selectedCheckboxes = checkboxSimForaDf.text.toString()
+                bundle.putString("4", selectedCheckboxes)
+            }
+
+            if (checkboxNao.isChecked) {
+                selectedCheckboxes = checkboxNao.text.toString()
+                bundle.putString("4", selectedCheckboxes)
             }
 
             bundle.putString("1", intent.getStringExtra("1"))
             bundle.putString("2", intent.getStringExtra("2"))
             bundle.putStringArrayList("3", intent.getStringArrayListExtra("3"))
-            bundle.putStringArrayList("4", selectedCheckboxes)
             bundle.putStringArrayList("infos", recuperaDados())
 
             val intent = Intent(this@Pagina5, Pagina6::class.java)
             intent.putExtras(bundle)
 
+            Log.d("Pagina5", "Pagina5")
             Log.d("Pagina5", bundle.toString())
             startActivity(intent)
         }

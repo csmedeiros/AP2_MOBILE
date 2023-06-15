@@ -18,7 +18,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-    <LinearLayout
+    <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -32,25 +32,30 @@
 
         <!-- CheckBoxes para as opções -->
 
-        <CheckBox
+        <RadioButton
                 android:id="@+id/checkbox_sim_df"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sim, no DF"/>
+                android:text="Sim, no RJ"/>
+        <RadioButton
+                android:id="@+id/checkbox_sim_dois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sim, no RJ e fora"/>
 
-        <CheckBox
+        <RadioButton
                 android:id="@+id/checkbox_sim_fora_df"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sim, fora do DF"/>
+                android:text="Sim, fora do RJ"/>
 
-        <CheckBox
+        <RadioButton
                 android:id="@+id/checkbox_nao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Não"/>
 
-    </LinearLayout>
+    </RadioGroup>
     <Button
             android:id="@+id/btnProx"
             android:layout_width="wrap_content"

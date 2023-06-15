@@ -18,7 +18,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintVertical_bias="0.875"/>
-    <LinearLayout
+    <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -33,25 +33,25 @@
 
         <!-- CheckBoxes para as opções -->
 
-        <CheckBox
+        <RadioButton
                 android:id="@+id/checkbox_mais_uma_vez"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mais de uma vez"/>
 
-        <CheckBox
+        <RadioButton
                 android:id="@+id/checkbox_uma_vez"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Uma vez"/>
 
-        <CheckBox
+        <RadioButton
                 android:id="@+id/checkbox_nunca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nunca"/>
 
-    </LinearLayout>
+    </RadioGroup>
     <TextView
             android:text="Já registrou ocorrências policiais anteriormente\nenvolvendo essa mesma pessoa?"
             android:textSize="20dp"

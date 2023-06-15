@@ -38,11 +38,21 @@ class Pagina2 : AppCompatActivity() {
                     nunca.id -> nunca.text.toString()
                     else -> null
                 }
+
+                // Desmarcar as outras opções
+                if (checkedId != maisDeUmaVez.id) {
+                    maisDeUmaVez.isChecked = false
+                }
+                if (checkedId != umaVez.id) {
+                    umaVez.isChecked = false
+                }
+                if (checkedId != nunca.id) {
+                    nunca.isChecked = false
+                }
             }
         }
 
         prox.setOnClickListener {
-
             val intent = Intent(this@Pagina2, Pagina3::class.java)
             bundle.putString("1", opcaoSelecionada)
             bundle.putStringArrayList("infos", infos)
