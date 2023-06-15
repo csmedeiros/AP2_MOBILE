@@ -5,32 +5,13 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-            android:text=""
-            android:textAlignment="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/tvInteracao"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.109"/>
-    <TextView
-            android:text="A Polícia Civil agradece pela sua colaboração\n\n e está disposta a ajudá-la no que for preciso.\n\n\nEncaminharemos essa resposta à\ndelegada responsável e as medidas preventivas serão efvetivadas imediatamente.\n\n\nAgora pedimos que dirija-se a sala de\nespera e aguarde seu nome ser chamado."
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:layout_width="381dp"
-            android:layout_height="271dp" android:id="@+id/textView2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.466"
-            app:layout_constraintVertical_bias="0.161"/>
-    <ImageView
-            android:layout_width="230dp"
-            android:layout_height="112dp" app:srcCompat="@drawable/download" android:id="@+id/imageView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.88"
-            app:layout_constraintHorizontal_bias="0.497"/>
+    <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="217dp"
+            android:layout_height="342dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.713"/>
     <TextView
             android:text="POLÍCIA CIVIL DO ESTADO DO RIO DE JANEIRO\nEM DEFESA DE QUEM PRECISAR"
             android:textAlignment="center"
@@ -41,6 +22,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.958"/>
+    <TextView
+            android:text=""
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvResultado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.191"/>
 
 
 </android.support.constraint.ConstraintLayout>

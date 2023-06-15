@@ -13,15 +13,9 @@ class Pagina4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pagina4)
 
-        val checkboxContainer = findViewById<LinearLayout>(R.id.checkbox_container)
         val bundle = Bundle()
 
         val button = findViewById<Button>(R.id.btnProx)
-
-        fun recuperaDados(): ArrayList<String>? {
-            val infos = intent.getStringArrayListExtra("infos")
-            return infos
-        }
 
         button.setOnClickListener {
             val selectedCheckboxes = ArrayList<String>()
@@ -35,14 +29,19 @@ class Pagina4 : AppCompatActivity() {
                     selectedCheckboxes.add(checkBox.text.toString())
                 }
             }
+            if(selectedCheckboxes.count()>0) {
+                bundle.putStringArrayList("3", selectedCheckboxes)
+            }
+            else {
+                selectedCheckboxes.add("NULL")
+                bundle.putStringArrayList("3", selectedCheckboxes)
+            }
 
             val resposta1 = intent.getStringExtra("1")
-            val resposta2 = intent.getStringExtra("2")
+            val resposta2 = intent.getStringArrayListExtra("2")
 
             bundle.putString("1", resposta1)
-            bundle.putString("2", resposta2)
-            bundle.putStringArrayList("3", selectedCheckboxes)
-            bundle.putStringArrayList("infos", recuperaDados())
+            bundle.putStringArrayList("2", resposta2)
 
             val intent = Intent(this@Pagina4, Pagina5::class.java)
             intent.putExtras(bundle)

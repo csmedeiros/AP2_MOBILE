@@ -19,11 +19,6 @@ class Pagina5 : AppCompatActivity() {
 
         val bundle = Bundle()
 
-        fun recuperaDados(): ArrayList<String>? {
-            val infos = intent.getStringArrayListExtra("infos")
-            return infos
-        }
-
         button.setOnClickListener {
             var selectedCheckboxes:String
 
@@ -43,9 +38,8 @@ class Pagina5 : AppCompatActivity() {
             }
 
             bundle.putString("1", intent.getStringExtra("1"))
-            bundle.putString("2", intent.getStringExtra("2"))
+            bundle.putStringArrayList("2", intent.getStringArrayListExtra("2"))
             bundle.putStringArrayList("3", intent.getStringArrayListExtra("3"))
-            bundle.putStringArrayList("infos", recuperaDados())
 
             val intent = Intent(this@Pagina5, Pagina6::class.java)
             intent.putExtras(bundle)

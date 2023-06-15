@@ -24,44 +24,36 @@ class Pagina7 : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.btnProx)
 
-        fun recuperaDados(): ArrayList<String>? {
-            val infos = intent.getStringArrayListExtra("infos")
-            return infos
-        }
-
-
-
         button.setOnClickListener {
 
             if (sim.isChecked) {
-                bundle.putString("6", sim.text.toString())
+                bundle.putString("7", sim.text.toString())
             }
 
             if(nao.isChecked) {
-                bundle.putString("6", nao.text.toString())
+                bundle.putString("7", nao.text.toString())
             }
 
             if (umaVez.isChecked) {
-                bundle.putString("7", umaVez.text.toString())
+                bundle.putString("8", umaVez.text.toString())
             }
 
             if (maisDeUmaVez.isChecked) {
-                bundle.putString("7", maisDeUmaVez.text.toString())
+                bundle.putString("8", maisDeUmaVez.text.toString())
             }
 
             if (nunca.isChecked) {
-                bundle.putString("7", nunca.text.toString())
+                bundle.putString("8", nunca.text.toString())
             }
 
 
 
             bundle.putString("1", intent.getStringExtra("1"))
-            bundle.putString("2", intent.getStringExtra("2"))
+            bundle.putStringArrayList("2", intent.getStringArrayListExtra("2"))
             bundle.putStringArrayList("3", intent.getStringArrayListExtra("3"))
             bundle.putString("4", intent.getStringExtra("4"))
             bundle.putString("5", intent.getStringExtra("5"))
             bundle.putString("6", intent.getStringExtra("6"))
-            bundle.putStringArrayList("infos", recuperaDados())
 
             val intent = Intent(this@Pagina7, Pagina8::class.java)
             intent.putExtras(bundle)

@@ -26,17 +26,14 @@
         <activity android:name=".Pagina3"/>
         <activity android:name=".Pagina4"/>
         <activity android:name=".Pagina5"/>
-        <activity android:name=".CDIA1"/>
-        <activity android:name=".CDIA2"/>
-        <activity android:name=".CDIA3"/>
         <activity android:name=".Pagina6"/>
         <activity android:name=".Pagina7"/>
-        <activity android:name=".ADS3"/>
         <activity android:name=".Pagina8"/>
 
         </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 
 
 </manifest>

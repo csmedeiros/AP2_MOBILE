@@ -18,11 +18,6 @@ class Pagina3 : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.btnProx)
 
-        fun recuperaDados(): ArrayList<String>? {
-            val infos = intent.getStringArrayListExtra("infos")
-            return infos
-        }
-
         button.setOnClickListener {
             // Criar uma lista para armazenar as checkboxes selecionadas
             val selectedCheckboxes = ArrayList<String>()
@@ -37,13 +32,17 @@ class Pagina3 : AppCompatActivity() {
                     selectedCheckboxes.add(checkBox.text.toString())
                 }
             }
-
             // Passar a lista para a próxima atividade
             val resposta1 = intent.getStringExtra("1")
             bundle.putString("1", resposta1.toString())
-            bundle.putString("2", selectedCheckboxes.toString())
+            if(selectedCheckboxes.count()>0) {
+                bundle.putStringArrayList("2", selectedCheckboxes)
+            }
+            else {
+                selectedCheckboxes.add("NULL")
+                bundle.putStringArrayList("2", selectedCheckboxes)
+            }
             Log.d("Pagina3", "adicionou 1 e 2")
-            bundle.putStringArrayList("infos", recuperaDados())
             val intent = Intent(this@Pagina3, Pagina4::class.java)
             intent.putExtras(bundle)
             Log.d("Pagina3", "Pagina3")

@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.TextView
 
 class Pagina2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,9 +14,6 @@ class Pagina2 : AppCompatActivity() {
         setContentView(R.layout.pagina2)
 
         val bundle = Bundle()
-        val infos = intent.getStringArrayListExtra("infos")
-        val recepcaoStr = "Olá " + infos?.get(0) + ", agora está tudo bem!\n A Polícia Civil está aqui para ajudá-la"
-        val recepcao = findViewById<TextView>(R.id.tvRecepcao)
         val maisDeUmaVez = findViewById<RadioButton>(R.id.rbMaisDeUmaVez)
         val umaVez = findViewById<RadioButton>(R.id.rbUmaVez)
         val nunca = findViewById<RadioButton>(R.id.rbNunca)
@@ -55,13 +51,10 @@ class Pagina2 : AppCompatActivity() {
         prox.setOnClickListener {
             val intent = Intent(this@Pagina2, Pagina3::class.java)
             bundle.putString("1", opcaoSelecionada)
-            bundle.putStringArrayList("infos", infos)
             intent.putExtras(bundle)
             Log.d("Pagina2", "Pagina2")
             Log.d("Pagina2", bundle.toString())
             startActivity(intent)
         }
-
-        recepcao.text = recepcaoStr
     }
 }

@@ -6,88 +6,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Pagina1" tools:layout_editor_absoluteY="98dp" tools:layout_editor_absoluteX="0dp">
+
+    <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="217dp"
+            android:layout_height="342dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.732">
+    </FrameLayout>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Formulário de Avaliação de Risco\nViolência Doméstica\n\nPCERJ"
+            android:text="PCERJ\n\nAvaliação de Risco de\nViolência Doméstica"
             android:textSize="25dp"
+            android:textColor="@color/black"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.103"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.243"
             android:id="@+id/textView3"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Certifique-se que todos os campos\n estão preenchidos"
-            android:textSize="15dp"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.701"
-            android:id="@+id/tvErroNomeIdade"/>
-    <Button
-            android:text="Próximo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnPesquisa"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.777"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Idade do Autor"
-            android:textAlignment="center"
-            android:ems="10"
-            android:id="@+id/etIdadeAutor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintVertical_bias="0.61"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Nome do Autor"
-            android:textAlignment="center"
-            android:ems="10"
-            android:id="@+id/etNomeAutor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.518"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Idade da Vítima"
-            android:textAlignment="center"
-            android:ems="10"
-            android:id="@+id/etIdadeVitima"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.428"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Nome da Vítima"
-            android:textAlignment="center"
-            android:ems="10"
-            android:id="@+id/etNomeVitima"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintVertical_bias="0.335"/>
     <ImageView
-            android:layout_width="259dp"
-            android:layout_height="130dp" app:srcCompat="@drawable/download" android:id="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="397dp"
+            android:layout_height="144dp" app:srcCompat="@drawable/download" android:id="@+id/imageView"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.007"/>
+    <Button
+            android:text="Iniciar avaliação"
+            android:layout_width="188dp"
+            android:layout_height="58dp" android:id="@+id/btnPesquisa"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.961"/>
 
 </android.support.constraint.ConstraintLayout>
